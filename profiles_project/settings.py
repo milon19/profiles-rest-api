@@ -26,6 +26,7 @@ SECRET_KEY = '=u$&+@2!l5$3@kayi1^ls6ndfmk$5*tdz)m__8*iw8mhjnhg5('
 DEBUG = True
 
 ALLOWED_HOSTS = []
+AUTH_USER_MODEL = 'profiles_api.UserProfile'
 
 
 # Application definition
