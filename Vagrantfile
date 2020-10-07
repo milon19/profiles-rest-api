@@ -15,6 +15,8 @@ Vagrant.configure("2") do |config|
  config.vm.box = "ubuntu/bionic64"
  config.vm.box_version = "~> 20200304.0.0"
  config.vm.synced_folder ".", "/vagrant", created: true
+ config.vm.boot_timeout = '1440'
+
 
  config.vm.network "forwarded_port", guest: 8000, host: 8000
 
