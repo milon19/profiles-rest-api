@@ -4,9 +4,9 @@ from rest_framework import status, viewsets, filters
 from rest_framework.permissions import IsAuthenticated
 
 
-from .serializers import HelloSerializer, UserProfileSerializer
-from .models import UserProfile
-from .permissions import UpdateOwnProfile
+from .serializers import HelloSerializer, UserProfileSerializer, ProfileFeedItemSerializer
+from .models import UserProfile, ProfileFeedItem
+from .permissions import UpdateOwnProfile, UpdateOwnStatus
 
 
 
@@ -92,3 +92,18 @@ class UserProfileViewSet(viewsets.ModelViewSet):
     permission_classes = (IsAuthenticated, UpdateOwnProfile)
     filter_backends = (filters.SearchFilter, )
     search_fields = ('name', 'email', )
+
+
+class UserProfileFeedViewSet(viewsets.ModelViewSet):
+    serializer_class = ProfileFeedItemSerializer
+    queryset = ProfileFeedItem.objects.all()
+    # authentication_classes = (TokenAuthentication, )
+    permission_classes = (
+        UpdateOwnStatus,
+        IsAuthenticated,
+    )
+
+
+    def perform_create(self, serializer):
+        serializer.save(user_profile=self.request.user)
+
