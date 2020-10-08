@@ -21,6 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c8c607a1-5bb7-4b9c-a171-6efd573a1b84" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profiles_api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/profiles_api/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/profiles_api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/profiles_api/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +64,8 @@
       <updated>1602008865651</updated>
       <workItem from="1602008867398" duration="8905000" />
       <workItem from="1602046336294" duration="1642000" />
-      <workItem from="1602084500252" duration="7296000" />
+      <workItem from="1602084500252" duration="7759000" />
+      <workItem from="1602134045129" duration="2011000" />
     </task>
     <servers />
   </component>
@@ -80,6 +82,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="723" y="326" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602009119250">
