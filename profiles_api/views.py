@@ -1,11 +1,13 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import status, viewsets
-from rest_framework.authentication import TokenAuthentication
+from rest_framework import status, viewsets, filters
+from rest_framework.permissions import IsAuthenticated
+
 
 from .serializers import HelloSerializer, UserProfileSerializer
 from .models import UserProfile
 from .permissions import UpdateOwnProfile
+
 
 
 
@@ -86,5 +88,7 @@ class HelloViewSet(viewsets.ViewSet):
 class UserProfileViewSet(viewsets.ModelViewSet):
     serializer_class = UserProfileSerializer
     queryset = UserProfile.objects.all()
-    authentication_classes = (TokenAuthentication, )
-    permission_classes = (UpdateOwnProfile, )
+    # authentication_classes = (TokenAuthentication, )
+    permission_classes = (IsAuthenticated, UpdateOwnProfile)
+    filter_backends = (filters.SearchFilter, )
+    search_fields = ('name', 'email', )
